@@ -5,18 +5,19 @@
  */
 
 var config = require('../config')
-var debug = require('debug')('mqtt')
+var bunyan = require('bunyan')
 var mqtt = require('mqtt')
 var AwNotification = require('../lib/AwNotification')
 
 let awNoti = new AwNotification()
+let log = bunyan.createLogger({name:'mqtt'})
 
 /**
  * Connect to MQTT Broker
  */
 
 let url = `${config.mqtt.protocol}://${config.mqtt.host}`
-debug(url)
+log.info(url)
 var client = mqtt.connect(url)
 
 /**
@@ -40,8 +41,8 @@ function onConnect() {
  */
 
 function onMessage(topic, message, packet) {
-  debug(`topic:${topic}`)
-  debug(`message:${message}`)
+  log.info(`topic:${topic}`)
+  log.info(`message:${message}`)
   awNoti.dispatch(topic, message)
 }
 
@@ -50,5 +51,5 @@ function onMessage(topic, message, packet) {
  */
 
 function onError (error) {
-  debug(error)
+  log.info(error)
 }

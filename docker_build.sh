@@ -14,5 +14,6 @@ docker tag $REPOSITORY:$TAG $AWS_CONTAINER_REGISTRY/$REPOSITORY:$TAG
 docker push $AWS_CONTAINER_REGISTRY/$REPOSITORY:$TAG
 kubectl set image deployment/$REPOSITORY apiway-notification=$AWS_CONTAINER_REGISTRY/$REPOSITORY:$TAG
 kubectl rollout status deployment/$REPOSITORY
+kubectl delete pods -l name=$REPOSITORY
 
 rm -f ecr_login.sh
