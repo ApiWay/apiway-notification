@@ -131,3 +131,9 @@ crashlytics-build.properties
 fabric.properties
 
 utils/env.js
+
+# config.json
+.config.json
+
+# package-lock.json
+.package-lock.json
