@@ -4,8 +4,7 @@ REPOSITORY="apiway-notification"
 TAG=$1
 AWS_CONTAINER_REGISTRY="539277938309.dkr.ecr.us-west-2.amazonaws.com"
 
-
-aws ecr get-login --region us-west-2 > ecr_login.sh
+aws ecr get-login --region us-west-2 --no-include-email > ecr_login.sh
 chmod +x ecr_login.sh
 ./ecr_login.sh
 
