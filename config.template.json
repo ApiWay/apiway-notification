@@ -1,0 +1,24 @@
+{
+  "mqtt": {
+    "protocol": "mqtt",
+    "port": "1883",
+    "host": "apiway-pubsub"
+  },
+
+  "aws": {
+    "ses": {
+      "key": "<your key>",
+      "select": "<your secret>",
+      "region": "<your region>"
+    }
+  },
+
+  "emailImg": {
+    "basePath": "<your resources server path>",
+    "mainLogo": "<your main logo>",
+    "failStatusLogo": "<your fail status logo>",
+    "failLogo": "<your fail logo>",
+    "successStatusLogo": "<your success status logo>",
+    "successLogo": "<your success logo>"
+  }
+}

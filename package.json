@@ -26,6 +26,7 @@
     "bunyan": "^1.8.10",
     "handlebars": "^4.0.10",
     "mqtt": "^2.8.0",
+    "node-ses": "^2.0.5",
     "nodemailer": "^4.0.1",
     "promise": "^7.1.1",
     "request": "^2.81.0"
